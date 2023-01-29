@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AceTea</title>
+  </head>
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    body {
+      background-image: url("background\ image.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    h1,
+    h3,
+    form {
+      color: #ffd2aa;
+    }
+  </style>
+
+  <body>
+    <h1>AceTea launches its first winter collection of tees!</h1>
+
+    <h3>Fill out the form below to order one!!!</h3>
+
+    <form
+      method="POST"
+      action="https://us-central1-fir-ac2be.cloudfunctions.net/formReader"
+    >
+      <label for="title"
+        >Title:
+        <select id="title">
+          <option>Select your title</option>
+          <option value="0">Mr.</option>
+          <option value="1">Mrs.</option>
+          <option value="2">Miss</option>
+          <option value="3">Dr.</option>
+        </select>
+      </label>
+
+      <div>Name:<input type="text" name="name" placeholder="Full Name" /></div>
+      <div>
+        Email:<input
+          type="email"
+          name="email"
+          placeholder="eg:name@gmail.com"
+        />
+      </div>
+      <div>
+        Full Adress Details:
+        <textarea name="textarea" rows="1" cols="35">Type Here</textarea>
+      </div>
+
+      <div>
+        Tee's Size:
+        <select name="size">
+          <option>Select the right size</option>
+          <option value="size_xs">XS</option>
+          <option value="size_s">S</option>
+          <option value="size_m">M</option>
+          <option value="size_l">L</option>
+          <option value="size_xl">XL</option>
+        </select>
+      </div>
+
+      <div>
+        Gender:
+        <select name="gender">
+          <option>Select the gender</option>
+          <option value="gender_female">F</option>
+          <option value="gender_male">M</option>
+          <option value="gender_other">Other</option>
+        </select>
+      </div>
+
+      <div>
+        Patterns:
+        <label for="back_print">
+          <input type="checkbox" name="patterns" />Back Print
+        </label>
+
+        <label for="front_print">
+          <input type="checkbox" name="patterns" />Front Print
+        </label>
+        <label for="details_print">
+          <input type="checkbox" name="patterns" /> Special Details
+          <textarea name="textarea" rows="1" cols="25"> </textarea>
+        </label>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
